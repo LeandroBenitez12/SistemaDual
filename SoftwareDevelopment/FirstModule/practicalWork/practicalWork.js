@@ -111,3 +111,31 @@ function wordsCount(phrase, text) {
 const newPhraseCount =
   "Hola soy leandro soy programador full stack soy 19 años soy leandro";
 console.log(wordsCount(newPhraseCount, "qsy"));
+
+/*
+5. Comprobar si una cadena de texto termina con un determinado sufijo:
+Crear una función que reciba una cadena de texto y un sufijo, y devuelva true si la cadena
+termina con ese sufijo, false en caso contrario.
+● Ejemplo: Si la entrada es "JavaScript es un lenguaje de programación" y se pretende
+saber si termina con “ción”, debería devolver true.
+● Ayuda: Se espera que el ejercicio se resuelva con ciclos inexactos
+*/
+console.log(
+  "---------------------------Exercise Five-------------------------------------"
+);
+
+function endsStringsWithSuffix(string, suffix) {
+  var j = suffix.length - 1;
+  var i = string.length - 1;
+  var suffixInverted = "";
+  while (j > -1) {
+    if (string[i] != suffix[j]) {
+      return false;
+    }
+    j--;
+    i--;
+  }
+  return true;
+}
+const thirdPrashe = "Estoy escuchando";
+console.log(endsStringsWithSuffix(thirdPrashe, "ando"));
