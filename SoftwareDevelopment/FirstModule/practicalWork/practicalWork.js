@@ -206,3 +206,40 @@ function extractDomain(email) {
 
 const email = "Leandro@ahk.com.ar";
 extractDomain(email);
+
+/* 
+8.
+Combinar dos arrays alternando sus elementos:
+Crear una función que reciba dos arrays y devuelva un nuevo array con los elementos de ambos
+arrays combinados alternativamente.
+● Ejemplo: Si la entrada fueran los arrays [1, 2, 3] y ['a', 'b', 'c', ‘d’], la salida debería ser [1,
+‘a’, 2, ‘b’, 3, ‘c’, ‘d’]
+
+*/
+
+console.log(
+  "----------------------------EXERCISE 8------------------------------------"
+);
+
+/* 
+
+9. Calcular impuestos:
+Desarrollar una función que permita conocer los impuestos que debe abonar una persona dada
+su edad y sus ingresos mensuales. Los impuestos a abonar por una persona entre 18 y 20 años
+es un 10% de los ingresos; las personas entre 21 y 30 deben abonar 15% de los ingresos; y todo el resto un 40%. Los menores de edad no abonan impuestos.
+● Ejemplo: Si la entrada fuera la edad 18 e ingreso 1000, la salida esperada debería ser
+100.
+*/
+
+console.log(
+  "----------------------------EXERCISE 9------------------------------------"
+);
+
+/*
+10. Resumen de cantidad de likes:
+Desarrollar una función que, dada una cantidad numérica de likes, devuelva un texto informativo
+de la cantidad de likes en formato de “K” para miles y “M” para millones.
+● Ejemplo: Si la entrada fuera 1400, la salida debería ser “1.4K”; o si la entrada fuera “34
+567” la salida debería ser “34.5K”.
+*/
+console.log("---------------------EXERCISE 10---------------------------");
