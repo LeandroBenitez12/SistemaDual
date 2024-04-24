@@ -127,7 +127,6 @@ console.log(
 function endsStringsWithSuffix(string, suffix) {
   var j = suffix.length - 1;
   var i = string.length - 1;
-  var suffixInverted = "";
   while (j > -1) {
     if (string[i] != suffix[j]) {
       return false;
