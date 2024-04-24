@@ -3,21 +3,21 @@ Crear una función que reciba una frase (string) y devuelva la misma frase con e
 título, donde la primera letra de cada palabra está en mayúscula y el resto en minúscula.
 */
 function wordSeparator(phrase, arg) {
-  if (typeof phrase !== "string") {
-    console.error("No es una cadena el argumento");
-    return;
-  }
   var word = "";
   var wordList = [];
-  for (var i = 0; i < phrase.length; i++) {
-    if (phrase[i] == arg) {
-      wordList.push(word);
-      word = "";
-    } else {
+  var i = 0;
+  while (i < phrase.length) {
+    if (phrase[i] != arg) {
       word += phrase[i];
+    } else {
+      if (word !== "") {
+        wordList.push(word);
+        word = "";
+      }
     }
+
+    i++;
   }
-  wordList.push(word);
   return wordList;
 }
 
@@ -138,3 +138,28 @@ function endsStringsWithSuffix(string, suffix) {
 }
 const thirdPrashe = "Estoy escuchando";
 console.log(endsStringsWithSuffix(thirdPrashe, "ando"));
+
+// ----------------------------EXERCISE 6------------------------------------
+/* 
+
+6. Eliminar los espacios en blanco al inicio y final de una cadena:
+Crear una función que reciba una cadena de texto y elimine los espacios en blanco al inicio y
+final de la misma.
+● Ejemplo: Si la entrada es " JavaScript es divertido “, la salida debería ser "JavaScript
+es divertido".
+● Ayuda: Se sugiere utilizar un ciclo exacto para recorrer toda la frase y que cada vez que
+se encuentre un caracter no “vacío” (espacio) se lo considere para la nueva palabra “sin
+espacios”. Si se le busca la vuelta, se puede reutilizar la función del punto 2.
+
+*/
+
+function removeSpacesEnd(str) {
+  const argument = " ";
+
+  const wordList = wordSeparator(str, " ");
+  console.log(wordList);
+  return concatenateArray(wordList, argument);
+}
+
+const sixthWord = "      JavaScript es divertido           ";
+console.log(removeSpacesEnd(sixthWord));
