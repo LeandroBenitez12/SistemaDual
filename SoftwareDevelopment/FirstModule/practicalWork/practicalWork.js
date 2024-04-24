@@ -87,3 +87,27 @@ function getStringReverting(string) {
 }
 
 console.log(getStringReverting(phrase));
+
+/*
+Contar la cantidad de veces que aparece una palabra en una cadena:
+Crear una función que reciba una cadena de texto y una palabra, y devuelva la cantidad de
+veces que aparece esa palabra en la cadena.
+● Ejemplo: Si la entrada es "El sol brilla y el cielo está despejado.", y la palabra que se
+quiere buscar es “el”, la salida debería ser el número 2.
+● Ayuda: Se sugiere recorrer la frase con algún ciclo de repetición. Cada vez que se
+encuentre un espacio en blanco se habrá encontrado una palabra. Cuando se tenga una
+palabra, se la podrá comparar con la palabra buscada y si coincide … (siga usted!)
+*/
+
+function wordsCount(phrase, text) {
+  var count = 0;
+  const arrayString = wordSeparator(phrase, " ");
+  for (var i = 0; i < arrayString.length; i++) {
+    arrayString[i] = arrayString[i].toLowerCase();
+    if (arrayString[i] === text) count++;
+  }
+  return count;
+}
+const newPhraseCount =
+  "Hola soy leandro soy programador full stack soy 19 años soy leandro";
+console.log(wordsCount(newPhraseCount, "qsy"));
