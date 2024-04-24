@@ -221,6 +221,29 @@ console.log(
   "----------------------------EXERCISE 8------------------------------------"
 );
 
+function combineArrays(arrayOne, arrayTwo) {
+  const amountElements = arrayOne.length + arrayTwo.length - 1;
+  const diferenceAmountElements = arrayOne.length - arrayTwo.length;
+  const combinationArray = [];
+  var alterar = false;
+  var i = 0;
+  while (i < amountElements) {
+    if (alterar) {
+      combinationArray.push(arrayTwo[i]);
+    } else {
+      combinationArray.push(arrayOne[i]);
+    }
+    i++;
+    !alterar;
+  }
+  console.log(combinationArray);
+  return combinationArray;
+}
+
+const firstArray = [1, 2, 3, 4, 5];
+const secondArray = ["a", "b", "c", "d"];
+
+combineArrays(firstArray, secondArray);
 /* 
 
 9. Calcular impuestos:
