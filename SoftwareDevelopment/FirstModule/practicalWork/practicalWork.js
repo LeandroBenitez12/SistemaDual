@@ -1,7 +1,4 @@
-/*
-Crear una función que reciba una frase (string) y devuelva la misma frase con el formato de
-título, donde la primera letra de cada palabra está en mayúscula y el resto en minúscula.
-*/
+// function usually used
 function wordSeparator(phrase, arg) {
   var word = "";
   var wordList = [];
@@ -21,6 +18,12 @@ function wordSeparator(phrase, arg) {
   return wordList;
 }
 
+/*
+Crear una función que reciba una frase (string) y devuelva la misma frase con el formato de
+título, donde la primera letra de cada palabra está en mayúscula y el resto en minúscula.
+*/
+console.log("---------------------Exercise One---------------------------");
+
 function convertToTitle(phrase) {
   var word = [];
   var title = "";
@@ -34,7 +37,7 @@ const phrase = "hello PEOPLE My name is LEANDRO";
 // convertToTitle(phrase);
 
 /*
-
+2.
 Concatenar elementos de un array con un separador personalizado:
 Crear una función que reciba un array de strings y un separador, y devuelva una sola cadena de
 texto que contenga todos los elementos del array concatenados con el separador especificado.
@@ -42,6 +45,9 @@ texto que contenga todos los elementos del array concatenados con el separador e
 salida debería ser "Hola-Mundo-JavaScript"
 
 */
+console.log(
+  "----------------------------EXERCISE 2------------------------------------"
+);
 
 function concatenateArray(array, separator) {
   console.log(typeof array);
@@ -61,7 +67,7 @@ array = ["Hello", "World", "I", "am", "Leandro"];
 console.log(concatenateArray(array, "*"));
 
 /*
-
+3.
 Revertir las palabras de una frase:
 Crear una función que reciba una cadena de texto y devuelva la misma cadena con las palabras
 en orden inverso.
@@ -72,6 +78,9 @@ encuentre un espacio en blanco se habrá encontrado una palabra. Cada palabra po
 ser insertada en un array (¿para qué?)
 
 */
+console.log(
+  "----------------------------EXERCISE 3------------------------------------"
+);
 
 function getStringReverting(string) {
   const arrayString = wordSeparator(string, " ");
@@ -89,6 +98,7 @@ function getStringReverting(string) {
 console.log(getStringReverting(phrase));
 
 /*
+4.
 Contar la cantidad de veces que aparece una palabra en una cadena:
 Crear una función que reciba una cadena de texto y una palabra, y devuelva la cantidad de
 veces que aparece esa palabra en la cadena.
@@ -98,6 +108,9 @@ quiere buscar es “el”, la salida debería ser el número 2.
 encuentre un espacio en blanco se habrá encontrado una palabra. Cuando se tenga una
 palabra, se la podrá comparar con la palabra buscada y si coincide … (siga usted!)
 */
+console.log(
+  "----------------------------EXERCISE 4------------------------------------"
+);
 
 function wordsCount(phrase, text) {
   var count = 0;
@@ -121,7 +134,7 @@ saber si termina con “ción”, debería devolver true.
 ● Ayuda: Se espera que el ejercicio se resuelva con ciclos inexactos
 */
 console.log(
-  "---------------------------Exercise Five-------------------------------------"
+  "---------------------------Exercise 5-------------------------------------"
 );
 
 function endsStringsWithSuffix(string, suffix) {
@@ -139,7 +152,6 @@ function endsStringsWithSuffix(string, suffix) {
 const thirdPrashe = "Estoy escuchando";
 console.log(endsStringsWithSuffix(thirdPrashe, "ando"));
 
-// ----------------------------EXERCISE 6------------------------------------
 /* 
 
 6. Eliminar los espacios en blanco al inicio y final de una cadena:
@@ -152,14 +164,45 @@ se encuentre un caracter no “vacío” (espacio) se lo considere para la nueva
 espacios”. Si se le busca la vuelta, se puede reutilizar la función del punto 2.
 
 */
+console.log(
+  "----------------------------EXERCISE 6------------------------------------"
+);
 
 function removeSpacesEnd(str) {
   const argument = " ";
-
-  const wordList = wordSeparator(str, " ");
-  console.log(wordList);
+  const wordList = wordSeparator(str, argument);
   return concatenateArray(wordList, argument);
 }
 
 const sixthWord = "      JavaScript es divertido           ";
 console.log(removeSpacesEnd(sixthWord));
+
+/* 
+7. Extraer el dominio de una dirección de correo electrónico:
+Crear una función que reciba una dirección de correo electrónico y devuelva únicamente el
+dominio de la misma.
+● Ejemplo: Si la entrada es “jhondoe@ahk.com.ar”, la salida debería ser “ahk.com.ar”
+*/
+
+console.log(
+  "----------------------------EXERCISE 7------------------------------------"
+);
+
+function extractDomain(email) {
+  const arroba = "@";
+  var isDomain = false;
+  var domain = "";
+  for (var i = 0; i < email.length; i++) {
+    if (isDomain) {
+      domain += email[i];
+    }
+    if (email[i] == arroba) {
+      isDomain = true;
+    }
+  }
+  console.log(domain);
+  return domain;
+}
+
+const email = "Leandro@ahk.com.ar";
+extractDomain(email);
