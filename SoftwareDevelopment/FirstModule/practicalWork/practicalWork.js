@@ -225,25 +225,24 @@ function combineArrays(arrayOne, arrayTwo) {
   const amountElements = arrayOne.length + arrayTwo.length - 1;
   const diferenceAmountElements = arrayOne.length - arrayTwo.length;
   const combinationArray = [];
-  var alterar = false;
+  var alterar = true;
   var i = 0;
-  while (i < amountElements) {
-    if (alterar) {
-      combinationArray.push(arrayTwo[i]);
-    } else {
-      combinationArray.push(arrayOne[i]);
-    }
+  var j = 0;
+  while (i < arrayOne.length || j < arrayTwo.length) {
+    if (i < arrayOne.length) combinationArray.push(arrayOne[i]);
+    if (i < arrayTwo.length) combinationArray.push(arrayTwo[i]);
     i++;
-    !alterar;
+    j++;
   }
   console.log(combinationArray);
   return combinationArray;
 }
 
-const firstArray = [1, 2, 3, 4, 5];
+const firstArray = [1, 2];
 const secondArray = ["a", "b", "c", "d"];
 
 combineArrays(firstArray, secondArray);
+
 /* 
 
 9. Calcular impuestos:
@@ -258,6 +257,23 @@ console.log(
   "----------------------------EXERCISE 9------------------------------------"
 );
 
+function calculatePorcentage(total, porcentage) {
+  return (total * porcentage) / 100;
+}
+function getPersonTaxesToPay(age, monthlyIncome) {
+  const agesRange = [18, 21, 30];
+  const impuestosPorcentageRange = [10, 15, 40];
+  if (age < agesRange[0]) return 0;
+  else if (age >= agesRange[0] && age < agesRange[1]) {
+    return calculatePorcentage(monthlyIncome, impuestosPorcentageRange[0]);
+  } else if (age >= agesRange[1] && age <= agesRange[2]) {
+    return calculatePorcentage(monthlyIncome, impuestosPorcentageRange[1]);
+  } else {
+    return calculatePorcentage(monthlyIncome, impuestosPorcentageRange[2]);
+  }
+}
+
+console.log(getPersonTaxesToPay(-17, 1000));
 /*
 10. Resumen de cantidad de likes:
 Desarrollar una función que, dada una cantidad numérica de likes, devuelva un texto informativo
