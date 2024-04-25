@@ -293,9 +293,19 @@ de la cantidad de likes en formato de “K” para miles y “M” para millones
 567” la salida debería ser “34.5K”.
 */
 console.log("---------------------EXERCISE 10---------------------------");
-
+var changeLetter = "K";
 function getLikesResume(likesAmount) {
-  const lettersArray = ["K", "M"];
+  var likesRest = likesAmount % 100;
+  var likesResume = (likesAmount - likesRest) / 1000;
+  if (likesResume >= 1000) {
+    const valor = likesResume;
+    changeLetter = "M";
+    return getLikesResume(valor);
+  } else if (likesResume >= 1 && likesResume < 1000) {
+    return likesResume + changeLetter;
+  } else {
+    return likesAmount;
+  }
 }
 
-getLikesResume(19905);
+console.log(getLikesResume(10000));
