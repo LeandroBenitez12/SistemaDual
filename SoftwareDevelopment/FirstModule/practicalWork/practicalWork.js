@@ -19,22 +19,32 @@ function wordSeparator(phrase, arg) {
 }
 
 /*
+1. Convertir una cadena de texto a formato de título:
 Crear una función que reciba una frase (string) y devuelva la misma frase con el formato de
 título, donde la primera letra de cada palabra está en mayúscula y el resto en minúscula.
+● Ejemplo: Si la entrada es “mi amigo me invitó a comer”, la salida debería ser “Mi
+Amigo Me Invitó A Comer”.
+● Ayuda: Los strings entienden una función “toLowerCase()” que convierte la primera
+letra del texto en mayúscula. Además, se espera que se resuelva con algún ciclo (exacto
+o inexacto) y utilizando la función anteriormente mencionada.
+
 */
 console.log("---------------------Exercise One---------------------------");
 
 function convertToTitle(phrase) {
-  var word = [];
-  var title = "";
-  const argument = " ";
-  const wordList = wordSeparator(phrase, argument);
-  for (var i = 0; i < wordList.length; i++) {}
+  var title = phrase[0].toUpperCase() + "";
+  for (var i = 1; i < phrase.length; i++) {
+    if (phrase[i - 1] == " ") {
+      title += phrase[i].toUpperCase();
+    } else {
+      title += phrase[i].toLowerCase();
+    }
+  }
   return title;
 }
 
-const phrase = "hello PEOPLE My name is LEANDRO";
-// convertToTitle(phrase);
+const phrase = "  hello PEOPLE My name is LEANDRO";
+console.log(convertToTitle(phrase));
 
 /*
 2.
@@ -274,6 +284,7 @@ function getPersonTaxesToPay(age, monthlyIncome) {
 }
 
 console.log(getPersonTaxesToPay(-17, 1000));
+
 /*
 10. Resumen de cantidad de likes:
 Desarrollar una función que, dada una cantidad numérica de likes, devuelva un texto informativo
@@ -282,3 +293,9 @@ de la cantidad de likes en formato de “K” para miles y “M” para millones
 567” la salida debería ser “34.5K”.
 */
 console.log("---------------------EXERCISE 10---------------------------");
+
+function getLikesResume(likesAmount) {
+  const lettersArray = ["K", "M"];
+}
+
+getLikesResume(19905);
