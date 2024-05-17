@@ -39,11 +39,16 @@ class Person {
   file;
   birthDate;
   localization;
+  gradeArray = [];
 
   constructor(name, lastName) {
     this.name = name;
     this.lastName = lastName;
   }
+  addGrades(grade) {
+    this.gradeArray.push(grade);
+  }
+
   fullName() {
     return this.name + " " + this.lastName;
   }
@@ -73,6 +78,13 @@ class Person {
   }
   livingNear(otherPerson) {
     return this.localization.distanceUp(otherPerson.localization) < 20;
+  }
+  getAverageGrade() {
+    var fullGrade = 0;
+    for (var i; i < gradeArray.length; i++) {
+      fullGrade += gradeArray[i];
+    }
+    return fullGrade / gradeArray.length;
   }
 }
 
@@ -129,6 +141,13 @@ class Curso {
   isACourseYoung() {
     return this.averageAlumnsAge() < 22;
   }
+  averageGeneralGradesAlumns() {
+    var gradesSum = 0;
+    for (var i; i < this.alumns.length; i++) {
+      gradesSum += this.alumns[i].getAverageGrade();
+    }
+    return gradesSum / this.alumns.length;
+  }
 }
 
 const courseOne = new Curso();
@@ -146,3 +165,13 @@ console.log(nadia.livingNear(robert));
 console.log(courseOne.algunAlumnoViveCerca());
 
 // un curso es joven si el promedio de sus edades es menor A 22
+
+console.log("-------------");
+
+//saber promedio general de un curso , teninedo en cuenta que cada alumno va a tener 2 calificaciones por curso
+nadia.addGrades(7);
+nadia.addGrades(2);
+robert.addGrades(3);
+robert.addGrades(2);
+
+console.log(courseOne.averageGeneralGradesAlumns());
