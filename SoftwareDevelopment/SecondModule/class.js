@@ -111,21 +111,20 @@ class Curso {
     }
     return agesSum / this.alumns.length;
   }
-  algunAlumnViveCerca() {
-    var i = 0;
+  algunAlumnoViveCerca() {
     var j = 0;
     var isNear = false;
-    while (!isNear && j < alumns.length) {
-      while (!isNear) {
-        if (this.alumns[j].livingNear(this.alumns[i])) {
-          isNear = true;
-          return true;
-        }
+    while (!isNear && j < this.alumns.length - 1) {
+      const currentAlumn = this.alumns[j];
+      var i = 1 + j;
+      while (!isNear && i < this.alumns.length) {
+        const otherAlum = this.alumns[i];
+        isNear = currentAlumn.livingNear(otherAlum);
         i++;
-        if (i > alumns.length) i = j;
       }
       j++;
     }
+    return isNear;
   }
 }
 
@@ -136,9 +135,10 @@ courseOne.addAlumns(nadia);
 courseOne.addAlumns(robert);
 console.log(courseOne.averageAlumnsAge());
 
-robert.localization = new Ubication(70, 30);
+robert.localization = new Ubication(10, 30);
 nadia.localization = new Ubication(70, 30);
 
 console.log(nadia.livingNear(robert));
 
+console.log(courseOne.algunAlumnoViveCerca());
 //
