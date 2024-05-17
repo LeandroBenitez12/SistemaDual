@@ -126,6 +126,9 @@ class Curso {
     }
     return isNear;
   }
+  isACourseYoung() {
+    return this.averageAlumnsAge() < 22;
+  }
 }
 
 const courseOne = new Curso();
@@ -141,4 +144,5 @@ nadia.localization = new Ubication(70, 30);
 console.log(nadia.livingNear(robert));
 
 console.log(courseOne.algunAlumnoViveCerca());
-//
+
+// un curso es joven si el promedio de sus edades es menor A 22
