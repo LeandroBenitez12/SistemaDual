@@ -19,11 +19,12 @@ person.introduce();
 person.greetToPerson("Mariano");
 
 class Person {
-  name;
-  lastName;
   file;
   birthDate;
-
+  constructor(name, lastName) {
+    this.name = name;
+    this.lastName = lastName;
+  }
   fullName() {
     return this.name + " " + this.lastName;
   }
@@ -48,13 +49,13 @@ class Person {
   }
 }
 
-const robert = new Person(); //instancia
-robert.name = "roberto";
-robert.lastName = "Pedro";
+const robert = new Person("roberto", "Pedro"); //instancia
+// robert.name = "roberto"; No se necesita porque creamos un metodo constructor
+// robert.lastName = "Pedro";
 
-const nadia = new Person();
-nadia.name = "NADIA";
-nadia.lastName = "NOSE";
+const nadia = new Person("Nadia", "Nose");
+// nadia.name = "NADIA";
+// nadia.lastName = "NOSE";
 nadia.birthDate = "2020-05-19";
 nadia.greetToPerson("Manolo");
 
@@ -63,5 +64,5 @@ nadia.greetToPersonAlumn(robert);
 
 console.log(nadia.getAge());
 
-const maria = new Person();
+const maria = new Person("Maria", "bRITEZ");
 maria.greetToPerson(); // unefined by default
