@@ -1,27 +1,28 @@
 export class Course {
   name;
   nameTeacher;
-  alumns = [];
+  studentsCourse = []; // coleccion
+  assigment;
 
   addAlumns(alumn) {
-    this.alumns.push(alumn);
+    this.studentsCourse.push(alumn);
   }
 
   averageAlumnsAge() {
     var agesSum = 0;
-    for (var i; i < this.alumns.length; i++) {
-      agesSum += this.alumns[i].getAge();
+    for (var i; i < this.studentsCourse.length; i++) {
+      agesSum += this.studentsCourse[i].alumns.getAge();
     }
-    return agesSum / this.alumns.length;
+    return agesSum / this.studentsCourse.length;
   }
   algunAlumnoViveCerca() {
     var j = 0;
     var isNear = false;
-    while (!isNear && j < this.alumns.length - 1) {
-      const currentAlumn = this.alumns[j];
+    while (!isNear && j < this.studentsCourse.length - 1) {
+      const currentAlumn = this.studentsCourse.alumns[j];
       var i = 1 + j;
-      while (!isNear && i < this.alumns.length) {
-        const otherAlum = this.alumns[i];
+      while (!isNear && i < this.studentsCourse.length) {
+        const otherAlum = this.studentsCourse.alumns[i];
         isNear = currentAlumn.livingNear(otherAlum);
         i++;
       }
@@ -34,12 +35,16 @@ export class Course {
   }
   averageGeneralGradesAlumns() {
     var gradesSum = 0;
-    for (var i; i < this.alumns.length; i++) {
-      gradesSum += this.alumns[i].getAverageGrade();
+    for (var i; i < this.studentsCourse.length; i++) {
+      gradesSum += this.studentsCourse[i].getAverageGrade();
     }
-    return gradesSum / this.alumns.length;
+    return gradesSum / this.studentsCourse.length;
   }
   isACourseYoung() {
     return this.averageGeneralGradesAlumns() >= 7;
+  }
+  // me interesa saber si en un curso todos aprobaron la cursada
+  areEverythingApproved() {
+    return this.studentsCourse.every((c) => c.isApproved()); // every verifica que todos sean true
   }
 }
