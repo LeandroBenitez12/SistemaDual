@@ -175,3 +175,5 @@ robert.addGrades(3);
 robert.addGrades(2);
 
 console.log(courseOne.averageGeneralGradesAlumns());
+
+// necesito saber de un curso si tuvo buen promedio mayor o = a 7

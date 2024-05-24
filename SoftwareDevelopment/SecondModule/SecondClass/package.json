@@ -1,0 +1,13 @@
+{
+  "name": "secondclass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "author": "leandro",
+  "license": "ISC",
+  "description": ""
+}
