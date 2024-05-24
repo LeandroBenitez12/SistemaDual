@@ -25,11 +25,9 @@ export class Alumn {
       console.log("Hola " + alumn.fullName() + " soy " + this.fullName());
     }
     getAge() {
-      return 18;
       var today = new Date(); // instancia fecha
   
       const birthDate = new Date(this.birthDate); // 'YYYY-MM-DD'
-      console.log("año actual: " + today.getFullYear());
   
       if (birthDate.getMonth > today.getMonth) {
         return today.getFullYear() - birthDate.getFullYear() - 1;

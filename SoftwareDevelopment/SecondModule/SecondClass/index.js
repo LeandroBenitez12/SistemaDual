@@ -12,7 +12,7 @@ const robert = new Alumn("roberto", "Pedro"); //instancia
 const nadia = new Alumn("Nadia", "Nose");
 // nadia.name = "NADIA";
 // nadia.lastName = "NOSE";
-nadia.birthDate = "2020-05-20";
+nadia.birthDate = "2021-06-27";
 nadia.greetToPerson("Manolo");
 
 robert.greetToPersonAlumn(nadia);
