@@ -40,7 +40,7 @@ export class Course {
     }
     return gradesSum / this.studentsCourse.length;
   }
-  isACourseYoung() {
+  approvedCourse() {
     return this.averageGeneralGradesAlumns() >= 7;
   }
   // me interesa saber si en un curso todos aprobaron la cursada
