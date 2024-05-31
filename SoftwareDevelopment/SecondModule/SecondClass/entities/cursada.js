@@ -37,4 +37,12 @@ export class Cursada {
   isApproved() {
     return this.califications.some((c) => c.nota >= 6);
   }
+
+  // quiero saber si la cursada fue aprobada o fue pormocionada
+  // depende de la materia
+  // existen materias que son promocionables o no
+  // para poder promocionar una materia 
+  // las notas obtenidas en las calificaciones de primera instancia deben ser >= a 8
+  // para que la cursada este aprobada se necesita que al meno haya dos calificacion con nota > = 6
+  
 }
