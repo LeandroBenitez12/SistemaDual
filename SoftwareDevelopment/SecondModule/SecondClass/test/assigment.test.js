@@ -20,6 +20,11 @@ test("Con 8 y 8 promocionamos mathematicalAnalysis", () => {
   expect(mathematicalAnalysis.isPromoted([nota1, nota2])).toBeTruthy();
 });
 
-test("", () => {});
+test("Con 8 y 8 no promocionamos diseño de sistemas", () => {
+  const nota1 = new Calification(8, 1);
+  const nota2 = new Calification(8, 1);
+
+  expect(sytemDesign.isPromoted([nota1, nota2])).toBeFalsy();
+});
 
 test("", () => {});
