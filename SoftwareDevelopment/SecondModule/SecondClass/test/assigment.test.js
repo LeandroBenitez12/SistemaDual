@@ -27,4 +27,15 @@ test("Con 8 y 8 no promocionamos diseño de sistemas", () => {
   expect(sytemDesign.isPromoted([nota1, nota2])).toBeFalsy();
 });
 
-test("", () => {});
+test("Con 6 y 7 aprobaos diseño de sistemas", () => {
+  const nota1 = new Calification(6, 1);
+  const nota2 = new Calification(8, 2);
+
+  expect(sytemDesign.isApprove([nota1, nota2])).toBeTruthy();
+});
+
+test("Con 2 y 7 desaprobamos mathematicalAnalysis", () => {
+  const nota1 = new Calification(2, 1);
+  const nota2 = new Calification(2, 2);
+  expect(mathematicalAnalysis.isApprove([nota1, nota2])).toBeFalsy();
+});

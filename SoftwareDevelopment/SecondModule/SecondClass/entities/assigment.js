@@ -6,7 +6,7 @@ export class Assigment {
     return califications.filter(c => c.isFirstIntance());
   }
   isApprove(califications) {
-    return califications.filter(c => c.notaMayorA(6).length >= 2);
+    return califications.filter(c => c.notaMayorA(6)).length >= 2;
   }
   isPromoted(califications) {
     return false;

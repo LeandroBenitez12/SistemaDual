@@ -1,0 +1,46 @@
+@startuml
+
+class Airport{
+    name;
+}
+class City{
+    name;
+}
+
+class AirPlane{
+    capacity;
+}
+
+class Airline{
+    flights;
+}
+class Flight{
+    passengers;
+    airCrews;
+    plane;
+   
+    destination;
+}
+
+class Passenger{
+    name;
+    surname;
+}
+
+class AirCrew{
+    type;
+    name;
+    surname;
+}
+
+
+City -> Airport
+Flight -> Airport
+Flight -> Passenger: *
+Flight -> AirCrew: *
+Fligth -> AirPlane
+Airline -> Flight: *
+AirCrew -> Airline
+
+
+@enduml

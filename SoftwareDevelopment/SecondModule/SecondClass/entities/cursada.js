@@ -11,7 +11,7 @@ export class Cursada {
   average() {
     const amountCalification = this.califications.length;
     let totalCalification = 0;
-    for (let i=0; i < amountCalification; i++) {
+    for (let i = 0; i < amountCalification; i++) {
       totalCalification += this.califications[i].nota;
     }
     return totalCalification / amountCalification;
@@ -35,14 +35,17 @@ export class Cursada {
   // forma mas simple
 
   isApproved() {
-    return this.califications.some((c) => c.nota >= 6);
+    return this.course.assigment.isApproved(this.califications);
+  }
+
+  isPromoted() {
+    return this.course.assigment.isPromoted(this.califications);
   }
 
   // quiero saber si la cursada fue aprobada o fue pormocionada
   // depende de la materia
   // existen materias que son promocionables o no
-  // para poder promocionar una materia 
+  // para poder promocionar una materia
   // las notas obtenidas en las calificaciones de primera instancia deben ser >= a 8
   // para que la cursada este aprobada se necesita que al meno haya dos calificacion con nota > = 6
-  
 }
