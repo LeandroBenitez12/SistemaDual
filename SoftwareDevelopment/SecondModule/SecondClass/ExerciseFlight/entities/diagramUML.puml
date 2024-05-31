@@ -33,7 +33,14 @@ class AirCrew{
     surname;
 }
 
+class FlightPath{
+    
+}
 
+class Layover{
+    airport;
+    durationAproxInMin;
+}
 City -> Airport
 Flight -> Airport
 Flight -> Passenger: *
