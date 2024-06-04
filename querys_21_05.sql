@@ -30,18 +30,21 @@ SELECT obra_id AS 'obra' , COUNT(obra_id) AS Amount FROM ejemplar GROUP BY obra_
 /*10. ¿Cuál/cuáles fueron los prestamos más largos en días? Utilizar la tabla “préstamo”.*/
 /* diferencia de fechas*/
 /*11. Insertar el idioma chino en la tabla “idioma”.*/
-
+INSERT INTO idioma(codigo,nombre) VALUES ("CH","chino");
 /* 12. Borrar el idioma chino en la tabla “idioma”.*/
-DELETE
+DELETE FROM idioma WHERE nombre="chino";
 /* 13. Se quiere crear una tabla para realizar pruebas que tenga la misma estructura que la*/
 /* tabla “prestamo” pero solo con los siguientes campos: id, usuario_bibliotecario_id,*/
 /* ejemplar_id, fecha, fecha_fin_prestamo. A la tabla se la llamará “prestamo_prueba” y*/
 /* se la llenará con los datos de la tabla “prestamo”.*/
-CREATE
+CREATE TABLE Test_prestamo(
+    id INT,
+    FOREIGN KEY (usuario_bibliotecario_id) REFERENCES usuario_bibliotecario
+)
 /* 14. Truncar la tabla “préstamo_prueba”.*/
-
+TRUNCATE TABLE prestamo_prueba;
 /* 15. Eliminar la tabla “préstamo_prueba”.*/
-
+DROP TABLE prestamo_prueba;
 /* 16. Listar los siguientes campos de la tabla “préstamo”: id, usuario_bibliotecario_id,*/
 /* ejemplar_id, fecha, fecha_fin_prestamo y tipo de préstamo. El tipo de préstamo lo*/
 /* sacamos con el valor de tipo_prestamo_id:*/
